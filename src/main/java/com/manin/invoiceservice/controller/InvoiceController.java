@@ -15,14 +15,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @ResponseBody
 public class InvoiceController {
     public static final String INVOICE_URL = "/invoice";
-    // should also have userId ?
     public static final String INVOICE_URL_ID = "/invoice/{id}";
-
-    /***
-     * 1. getAllInvoices for userId
-     * 2. getInvoiceById for userId
-     * 3. saveInvoice for  userId
-     */
 
     @ApiOperation("Get all Invoices for a User")
     @GetMapping(path = INVOICE_URL)
