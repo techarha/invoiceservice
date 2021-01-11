@@ -1,5 +1,6 @@
 package com.manin.invoiceservice.controller;
 
+import com.manin.invoiceservice.service.InvoiceService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class InvoiceController {
     public static final String INVOICE_URL = "/invoice";
     public static final String INVOICE_URL_ID = "/invoice/{id}";
+
+    private InvoiceService invoiceService;
+
+    public InvoiceController(InvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
 
     @ApiOperation("Get all Invoices for a User")
     @GetMapping(path = INVOICE_URL)
