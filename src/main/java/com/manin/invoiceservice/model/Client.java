@@ -11,13 +11,15 @@ public class Client {
     @Id
     private int id;
     @Column
-    private String clientName;
+    private String businessName;
     @Column
-    private String clientAddress;
+    private String businessAddress;
     @Column
     private String gstNumber;
     @Column
     private String businessType;
+    @Column
+    private String ownerName;
 
     public int getId() {
         return id;
@@ -27,20 +29,20 @@ public class Client {
         this.id = id;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getBusinessName() {
+        return businessName;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setBusinessName(String clientName) {
+        this.businessName = clientName;
     }
 
-    public String getClientAddress() {
-        return clientAddress;
+    public String getBusinessAddress() {
+        return businessAddress;
     }
 
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
+    public void setBusinessAddress(String clientAddress) {
+        this.businessAddress = clientAddress;
     }
 
     public String getGstNumber() {
@@ -57,5 +59,13 @@ public class Client {
 
     public void setBusinessType(String businessType) {
         this.businessType = businessType;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 }

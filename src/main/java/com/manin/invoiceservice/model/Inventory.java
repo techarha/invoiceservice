@@ -11,11 +11,11 @@ public class Inventory {
     @Id
     private int id;
     @Column
-    private String customerId;
+    private int customerId;
     @Column
-    private String userId;
+    private int userId;
     @Column
-    private String productId;
+    private int productId;
     @Column
     private Integer productQuantity;
 
@@ -27,27 +27,27 @@ public class Inventory {
         this.id = id;
     }
 
-    public String getCustomerId() {
+    public int getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 

@@ -19,9 +19,12 @@ public class Product {
     private String brandName;
     @Column
     private String productName;
-    // TODO: this should be a enum with tax codes
+    // TODO: should be a enum with tax codes
     @Column
     private String gstTaxCode;
+    // TODO: should be an enum
+    @Column
+    private String size;
     @Column
     private BigDecimal maxRetailPrice;
 
