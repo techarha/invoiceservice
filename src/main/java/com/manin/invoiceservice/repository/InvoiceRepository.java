@@ -1,4 +1,4 @@
-package com.manin.invoiceservice.repo;
+package com.manin.invoiceservice.repository;
 
 import com.manin.invoiceservice.model.Invoice;
 import org.springframework.data.repository.CrudRepository;

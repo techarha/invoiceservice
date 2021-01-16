@@ -1,5 +1,6 @@
 package com.manin.invoiceservice.controller;
 
+import com.manin.invoiceservice.model.Customer;
 import com.manin.invoiceservice.service.InvoiceService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -14,13 +15,13 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @Controller
 @RequestMapping(produces = APPLICATION_JSON_VALUE)
 @ResponseBody
-public class InvoiceController {
+public class InvoiceServiceController {
     public static final String INVOICE_URL = "/invoice";
     public static final String INVOICE_URL_ID = "/invoice/{id}";
 
     private InvoiceService invoiceService;
 
-    public InvoiceController(InvoiceService invoiceService) {
+    public InvoiceServiceController(InvoiceService invoiceService) {
         this.invoiceService = invoiceService;
     }
 
@@ -42,4 +43,9 @@ public class InvoiceController {
         return null;
     }
 
+    @ApiOperation("Get all Customers")
+    @GetMapping(path = "/customers")
+    public List<Customer> getAllCustomers() {
+        return invoiceService.getAllCustomers();
+    }
 }

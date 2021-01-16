@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.manin</groupId>
-    <artifactId>invoiceservices</artifactId>
+    <artifactId>invoiceservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>invoiceservices</name>
+    <name>invoiceservice</name>
     <description>Service to handle customer Invoices</description>
 
     <properties>
