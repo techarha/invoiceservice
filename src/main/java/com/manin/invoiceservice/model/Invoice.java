@@ -9,4 +9,5 @@ import javax.persistence.Table;
 public class Invoice {
     @Id
     private int id;
+
 }

@@ -1,6 +1,8 @@
 package com.manin.invoiceservice.controller;
 
 import com.manin.invoiceservice.model.Customer;
+import com.manin.invoiceservice.model.request.InvoiceRequest;
+import com.manin.invoiceservice.model.response.InvoiceResponse;
 import com.manin.invoiceservice.service.InvoiceService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -39,13 +41,8 @@ public class InvoiceServiceController {
 
     @ApiOperation("Save Invoice to db")
     @PostMapping(path = INVOICE_URL)
-    public String saveInvoice(@RequestBody String invoice) {
+    public InvoiceResponse saveInvoice(@RequestBody InvoiceRequest invoiceRequest) {
         return null;
     }
 
-    @ApiOperation("Get all Customers")
-    @GetMapping(path = "/customers")
-    public List<Customer> getAllCustomers() {
-        return invoiceService.getAllCustomers();
-    }
 }
