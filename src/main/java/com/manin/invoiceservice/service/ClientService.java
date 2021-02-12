@@ -1,5 +1,6 @@
 package com.manin.invoiceservice.service;
 
+import com.manin.invoiceservice.exceptions.DummyException;
 import com.manin.invoiceservice.model.Client;
 import com.manin.invoiceservice.repository.ClientRepository;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,10 @@ public class ClientService {
     }
 
     public Optional<Client> getClientById(Integer id) {
+        Optional<Client> client = clientRepository.findById(id);
+        if (!client.isPresent()) {
+            throw new DummyException("INV-1", "Could not find Client");
+        }
         return clientRepository.findById(id);
     }
 }

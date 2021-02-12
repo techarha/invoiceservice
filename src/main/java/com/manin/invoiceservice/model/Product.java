@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Table
 public class Product {
     @Id
-    private String id;
+    private int id;
     @Column
     private String category;
     @Column
@@ -21,18 +21,18 @@ public class Product {
     private String productName;
     // TODO: should be a enum with tax codes
     @Column
-    private String gstTaxCode;
+    private int gstTaxCode;
     // TODO: should be an enum
     @Column
     private String size;
     @Column
     private BigDecimal maxRetailPrice;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -68,11 +68,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getGstTaxCode() {
+    public int getGstTaxCode() {
         return gstTaxCode;
     }
 
-    public void setGstTaxCode(String gstTaxCode) {
+    public void setGstTaxCode(int gstTaxCode) {
         this.gstTaxCode = gstTaxCode;
     }
 

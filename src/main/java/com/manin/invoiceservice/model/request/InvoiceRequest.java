@@ -1,11 +1,18 @@
 package com.manin.invoiceservice.model.request;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class InvoiceRequest {
+    // TODO: update data type to String ****
+    @NotNull(message = "CustomerId cannot be null")
     private int customerId;
+    @NotNull(message = "ClientId cannot be null")
     private int clientId;
+    @NotEmpty(message = "Order List cannot be null")
     private List<OrderRequest> orderList;
+    @NotNull(message = "GST inclusive Flag must be set")
     private boolean isGstInclusive;
 
     public int getCustomerId() {

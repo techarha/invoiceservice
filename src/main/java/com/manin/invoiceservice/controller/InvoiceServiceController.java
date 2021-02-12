@@ -42,7 +42,7 @@ public class InvoiceServiceController {
     @ApiOperation("Save Invoice to db")
     @PostMapping(path = INVOICE_URL)
     public InvoiceResponse saveInvoice(@RequestBody InvoiceRequest invoiceRequest) {
-        return null;
+        return invoiceService.generateInvoice(invoiceRequest);
     }
 
 }
