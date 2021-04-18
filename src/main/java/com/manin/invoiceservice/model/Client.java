@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table
 public class Client {
     @Id
-    private int id;
+    private String id;
     @Column
     private String businessName;
     @Column
@@ -21,11 +21,11 @@ public class Client {
     @Column
     private String ownerName;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

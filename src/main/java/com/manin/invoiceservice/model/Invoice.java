@@ -8,6 +8,6 @@ import javax.persistence.Table;
 @Table
 public class Invoice {
     @Id
-    private int id;
+    private String id;
 
 }

@@ -14,7 +14,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public Optional<Customer> getCustomerById(Integer id) {
+    public Optional<Customer> getCustomerById(String id) {
         return customerRepository.findById(id);
     }
 }

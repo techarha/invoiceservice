@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class Customer {
     @Id
-    private int id;
+    private String id;
     @Column
     private String name;
     @Column
@@ -20,11 +20,11 @@ public class Customer {
     @Column
     private boolean isBusinessCustomer;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

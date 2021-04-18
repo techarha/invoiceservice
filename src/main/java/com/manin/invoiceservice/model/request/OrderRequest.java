@@ -4,15 +4,15 @@ package com.manin.invoiceservice.model.request;
 import java.math.BigDecimal;
 
 public class OrderRequest {
-    private int productId;
+    private String productId;
     private BigDecimal sellingPrice;
     private int quantity;
 
-    public int getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

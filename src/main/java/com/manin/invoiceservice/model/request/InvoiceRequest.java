@@ -7,27 +7,27 @@ import java.util.List;
 public class InvoiceRequest {
     // TODO: update data type to String ****
     @NotNull(message = "CustomerId cannot be null")
-    private int customerId;
+    private String customerId;
     @NotNull(message = "ClientId cannot be null")
-    private int clientId;
+    private String clientId;
     @NotEmpty(message = "Order List cannot be null")
     private List<OrderRequest> orderList;
     @NotNull(message = "GST inclusive Flag must be set")
     private boolean isGstInclusive;
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public int getClientId() {
+    public String getClientId() {
         return clientId;
     }
 
-    public void setClientId(int clientId) {
+    public void setClientId(String clientId) {
         this.clientId = clientId;
     }
 

@@ -16,7 +16,7 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public Optional<Client> getClientById(Integer id) {
+    public Optional<Client> getClientById(String id) {
         Optional<Client> client = clientRepository.findById(id);
         if (!client.isPresent()) {
             throw new DummyException("INV-1", "Could not find Client");

@@ -2,7 +2,6 @@ package com.manin.invoiceservice.service;
 
 import com.manin.invoiceservice.model.Inventory;
 import com.manin.invoiceservice.repository.InventoryRepository;
-import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,7 +15,7 @@ public class InventoryService {
         this.inventoryRepository = inventoryRepository;
     }
 
-    public Optional<Inventory> getInventoryById(Integer id) {
+    public Optional<Inventory> getInventoryById(String id) {
         return inventoryRepository.findById(id);
     }
 }

@@ -51,10 +51,10 @@ public class InvoiceService {
     }
 
     private List<OrderResponse> assembleOrderResponseList(List<OrderRequest> orders, boolean isGstInclusive) {
-        List<Integer> productIdList = orders.stream()
+        List<String> productIdList = orders.stream()
                 .map(r -> r.getProductId()).collect(Collectors.toList());
 
-        Map<Integer, Product> productMap = productService.getAllProductByIds(productIdList);
+        Map<String, Product> productMap = productService.getAllProductByIds(productIdList);
 
         List<OrderResponse> orderResponseList = orders.stream()
                 .map(orderRequest -> assembleOrderResponse(orderRequest, productMap, isGstInclusive))
@@ -64,7 +64,7 @@ public class InvoiceService {
     }
 
     private OrderResponse assembleOrderResponse(OrderRequest order,
-                                                Map<Integer, Product> productMap,
+                                                Map<String, Product> productMap,
                                                 boolean isGstInclusive) {
         BigDecimal uGst;
         BigDecimal cGst;

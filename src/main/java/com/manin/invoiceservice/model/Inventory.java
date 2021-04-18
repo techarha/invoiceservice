@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table
 public class Inventory {
     @Id
-    private int id;
+    private String id;
     @Column
     private int customerId;
     @Column
@@ -19,11 +19,11 @@ public class Inventory {
     @Column
     private Integer productQuantity;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

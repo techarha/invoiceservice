@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Table
 public class Product {
     @Id
-    private int id;
+    private String id;
     @Column
     private String category;
     @Column
@@ -28,11 +28,11 @@ public class Product {
     @Column
     private BigDecimal maxRetailPrice;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -18,7 +18,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public Optional<Product> getProductById(Integer id) {
+    public Optional<Product> getProductById(String id) {
         Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
             // throws a runtime exception, for now we throw a dummy exception just as service would
@@ -27,8 +27,8 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public Map<Integer, Product> getAllProductByIds(List<Integer> productIds) {
-        Map<Integer, Product> productMap = new HashMap<>();
+    public Map<String, Product> getAllProductByIds(List<String> productIds) {
+        Map<String, Product> productMap = new HashMap<>();
         productRepository.findAllById(productIds).forEach(p -> productMap.put(p.getId(), p));
         return productMap;
     }
