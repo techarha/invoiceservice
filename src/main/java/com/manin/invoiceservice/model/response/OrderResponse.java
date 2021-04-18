@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 public class OrderResponse {
     private Product product;
+    private Integer quantity;
     private BigDecimal discount;
     private BigDecimal individualIGstValue;
     private BigDecimal individualCGstValue;
@@ -112,5 +113,13 @@ public class OrderResponse {
 
     public void setTotalAmountAfterTax(BigDecimal totalAmountAfterTax) {
         this.totalAmountAfterTax = totalAmountAfterTax;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }

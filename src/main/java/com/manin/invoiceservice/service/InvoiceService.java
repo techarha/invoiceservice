@@ -77,14 +77,15 @@ public class InvoiceService {
         // TODO: update to a better name
         BigDecimal taxIdentifier = valueOf(product.getGstTaxCode()).divide(valueOf(100)).add(BigDecimal.ONE);
         if (isGstInclusive) {
-            amountBeforeTax = sellingPrice.divide(taxIdentifier, BigDecimal.ROUND_HALF_DOWN, 2);
+            amountBeforeTax = sellingPrice.divide(taxIdentifier, BigDecimal.ROUND_CEILING, 2);
             amountAfterTax = sellingPrice;
         } else {
             amountBeforeTax = sellingPrice;
-            amountAfterTax = sellingPrice.multiply(taxIdentifier);
+            amountAfterTax = sellingPrice.multiply(taxIdentifier).setScale(2);
+            sellingPrice = amountAfterTax;
         }
         // TODO: IGST to be introduced for inter state transaction
-        cGst = amountAfterTax.subtract(amountBeforeTax).divide(valueOf(2), BigDecimal.ROUND_HALF_DOWN, 2);
+        cGst = amountAfterTax.subtract(amountBeforeTax).divide(valueOf(2), BigDecimal.ROUND_CEILING, 2);
         uGst = cGst;
 
         orderResponse.setIndividualAmountBeforeTax(amountBeforeTax);
@@ -95,7 +96,8 @@ public class InvoiceService {
         orderResponse.setTotalUGstValue(uGst.multiply(valueOf(order.getQuantity())));
         orderResponse.setProduct(product);
         orderResponse.setDiscount(product.getMaxRetailPrice().subtract(sellingPrice)
-                .divide(product.getMaxRetailPrice(), BigDecimal.ROUND_HALF_DOWN, 2).multiply(new BigDecimal("100")));
+                .divide(product.getMaxRetailPrice(), BigDecimal.ROUND_CEILING, 2)
+                .multiply(new BigDecimal("100")));
         orderResponse.setIndividualAmountAfterTax(amountAfterTax);
         orderResponse.setTotalAmountAfterTax(amountAfterTax.multiply(valueOf(order.getQuantity())));
         return orderResponse;
